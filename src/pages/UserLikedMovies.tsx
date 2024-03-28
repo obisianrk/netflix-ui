@@ -58,12 +58,8 @@ const Container = styled.div`
     h1 {
       margin-left: 3rem;
     }
-    .list {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
     .grid {
+      margin-left: 3rem;
       flex-wrap: wrap;
       gap: 1rem;
       align-item: center;
