@@ -95,7 +95,7 @@ export const getUsersLikedMovies = createAsyncThunk(
   async (email: string) => {
     const {
       data: { movies },
-    } = await axios.get(`http://localhost:5000/api/user/liked/${email}`);
+    } = await axios.get(`https://netflix-api-bice.vercel.app/api/user/liked/${email}`);
     return movies;
   }
 );
@@ -105,7 +105,7 @@ export const removeMovieFromLiked = createAsyncThunk(
   async ({ movieId, email }: { movieId: number; email: string }) => {
     const {
       data: { movies },
-    } = await axios.put("http://localhost:5000/api/user/remove", {
+    } = await axios.put("https://netflix-api-bice.vercel.app/api/user/remove", {
       email,
       movieId,
     });
@@ -142,8 +142,6 @@ export const store = configureStore({
     netflix: NetflixSlice.reducer,
   },
 });
-
-// export const { setGenres, setMovies } = NetflixSlice.actions;
 
 export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch

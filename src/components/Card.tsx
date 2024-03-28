@@ -35,7 +35,7 @@ export default function Card({
 
   const addToList = async () => {
     try {
-      await axios.post("http://localhost:5000/api/user/add", {
+      await axios.post("https://netflix-api-bice.vercel.app/api/user/add", {
         email,
         data: movieData,
       });
